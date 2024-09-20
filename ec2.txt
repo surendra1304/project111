@@ -9,7 +9,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "eu-west-1"
+  region = "us-east-1"
 }
 
 
@@ -19,13 +19,13 @@ module "ec2_instance" {
   name = "single-instance"
 
   instance_type          = "t2.micro"
-  key_name               = "key11"
+  key_name               = "key333"
   monitoring             = true
   vpc_security_group_ids = ["sg-009f20ca4d90ba4bd"]
   subnet_id              = "subnet-051c481a09e876207"
 
   tags = {
     Terraform   = "true"
-    Environment = "dev"
+    Environment = "test"
   }
 }
